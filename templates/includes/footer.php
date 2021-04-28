@@ -12,7 +12,10 @@
                                 Logged in as <?php echo getUser()['name']; ?>
                             </div>
                             <br />
+                            <form role="form" enctype="multipart/form-data" method="post" action="register.php">
+                                <input name="anticsrf" type="hidden" value="<?php echo $_SESSION['token']; ?>">
                             <form role="form" method="post" action="logout.php">
+                                <input name="anticsrfout" type="hidden" value="<?php echo $_SESSION['token']; ?>">
                                 <input type="submit" name="do_logout" class="btn btn-default" value="Log Out" />
                             </form>
                         <?php else : ?>
@@ -20,6 +23,7 @@
                                 <div class="form-group">
                                     <label>Username</label>
                                     <input name="username" type="text" class="form-control" placeholder="Introduce el Username" />
+                                    <input name="anticsrf" type="hidden" value="<?php echo $_SESSION['token']; ?>" />                                
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>
