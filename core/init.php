@@ -1,6 +1,15 @@
 <?php 
 //Start Session
-session_start();
+session_start([
+	'cookie_httponly' => true,
+	'cookie_secure' => true,
+	'cookie_samesite' => 'Strict',
+]);
+
+if (empty($_SESSION['token'])) {
+	$_SESSION['token'] = bin2hex(random_bytes(32));
+}
+$token = $_SESSION['token'];
 
 //Include Configuration
 require_once('config/config.php');
