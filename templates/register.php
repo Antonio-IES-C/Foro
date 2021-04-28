@@ -23,6 +23,7 @@
         <label>About Myself</label><textarea id="about" rows="6" cols="80" class="form-control" name="about" placeholder="Tell us something about yourself (Optional)"></textarea>
     </div>   
     <input name="register" type="submit" class="btn btn-default" value="Register" />
+    <input name="anticsrf" type="hidden" value="<?php echo $_SESSION['token']; ?>">
 </form>
 
 <?php include('includes/footer.php'); ?>
