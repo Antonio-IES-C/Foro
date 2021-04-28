@@ -22,7 +22,6 @@ if (isset($category)){
 } 
 if (isset($user_id)){
     $template->topics = $topic->getByUser($user_id);
-    //$template->title = 'Posts by "'.$user->getUser($user_id)['name'].'"';
 } 
 
 if (!isset($category) && !isset($user_id)) {
