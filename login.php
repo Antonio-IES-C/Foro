@@ -5,8 +5,8 @@
 
     
             //get username and password
-            $username = $_POST['username'];
-            $password = $_POST['password'];
+            $username = htmlentities($_POST['username']);
+            $password = htmlentities($_POST['password']);
             
             //Create user object
             $user = new User;
